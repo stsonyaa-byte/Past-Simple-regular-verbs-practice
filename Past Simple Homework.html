@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Past Simple Homework</title>
+<style>
+:root{--bg:#f3f5ff;--card:#fff;--tx:#1d2340;--mut:#6b7194;--pri:#5b4bff;--ok:#12a36b;--okb:#dff7ec;--bad:#e5484d;--badb:#fde6e6;--yel:#ffb703;--line:#dfe3f6;--soft:#eef0ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12142a;--card:#1c1f3d;--tx:#eef0ff;--mut:#a0a6d4;--line:#2f3466;--soft:#262a54;--okb:#12382c;--badb:#41202a;--pri:#8a7dff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12142a;--card:#1c1f3d;--tx:#eef0ff;--mut:#a0a6d4;--line:#2f3466;--soft:#262a54;--okb:#12382c;--badb:#41202a;--pri:#8a7dff;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.hero{background:linear-gradient(135deg,#5b4bff,#ff4d8d 60%,#ffb703);color:#fff;padding:36px 20px 56px;text-align:center}
+.hero h1{margin:0 0 6px;font-size:clamp(26px,5vw,42px)}
+.hero p{margin:0;opacity:.95}
+.top{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line);padding:8px 12px;padding-top:calc(8px + env(safe-area-inset-top,0px))}
+.top nav{display:flex;gap:6px;overflow-x:auto;max-width:900px;margin:auto}
+.top a{white-space:nowrap;text-decoration:none;color:var(--tx);background:var(--soft);padding:5px 12px;border-radius:99px;font-size:14px;font-weight:600}
+.pg{max-width:900px;margin:6px auto 0;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut)}
+.pg div{flex:1;height:8px;background:var(--soft);border-radius:9px;overflow:hidden}
+#bar{height:100%;width:0;background:linear-gradient(90deg,#12a36b,#ffb703);transition:width .4s}
+main{max-width:900px;margin:-28px auto 40px;padding:0 14px}
+.card{background:var(--card);border-radius:20px;padding:22px;margin-bottom:20px;box-shadow:0 6px 24px rgba(60,50,150,.12)}
+h2{margin:0 0 12px;font-size:24px}
+h3{margin:0 0 4px;font-size:18px}h3 span{color:var(--pri)}
+.ins{margin:0 0 12px;color:var(--mut)}
+.act{border-top:2px dashed var(--line);padding-top:16px;margin-top:18px}
+.sch{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.sc{border-radius:16px;padding:14px;color:#fff}.sc b{font-size:20px}.sc code{display:block;background:rgba(255,255,255,.2);border-radius:10px;padding:6px 10px;margin:8px 0;font-size:15px}
+.rules{background:var(--soft);border-radius:14px;padding:10px 14px;margin:14px 0;font-size:15px}
+.mc{background:var(--soft);border-radius:14px;padding:10px 14px;margin:8px 0}
+.btn,.chip{font:inherit;cursor:pointer;border:0;border-radius:99px;padding:8px 16px;font-weight:600;background:var(--pri);color:#fff}
+.btn.g{background:var(--ok)}.btn.r{background:var(--bad)}
+.btn:hover,.chip:hover{filter:brightness(1.1)}
+.chip{background:var(--soft);color:var(--tx);padding:6px 12px;margin:3px;border:2px solid var(--line)}
+.chip.on{border-color:var(--pri);background:var(--pri);color:#fff}.chip:disabled{opacity:.4;cursor:default}
+.bank{margin:6px 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+.col{border:2px solid var(--line);border-radius:14px;min-height:110px;padding:8px;cursor:pointer;background:var(--soft)}
+.col b{display:block;text-align:center;margin-bottom:6px}.col .chip{background:var(--okb);border-color:var(--ok);cursor:default}
+.it{margin:12px 0;padding:10px 12px;border-radius:14px;background:var(--soft)}
+.q{margin-bottom:6px}.n{color:var(--pri);margin-right:6px}
+.pat{font:600 17px/1.6 ui-monospace,Menlo,Consolas,monospace;word-break:break-all}
+input,textarea{font:inherit;color:var(--tx);background:var(--card);border:2px solid #9aa0d4;border-radius:12px;padding:8px 12px;width:100%;margin:4px 0;font-size:16px}
+input.sm{width:150px;display:inline-block;padding:3px 10px;margin:0 4px}
+input:focus,textarea:focus{outline:0;border-color:var(--pri)}
+input:disabled{background:var(--okb);border-color:var(--ok)}
+.it .btn{margin-top:4px}
+.fb{margin-top:6px;font-size:15px;font-weight:600}.fb.ok{color:var(--ok)}.fb.bad{color:var(--bad)}
+.w{display:inline-block;padding:2px 7px;border-radius:8px;cursor:pointer;margin:2px 0;border:2px solid transparent}
+.w:hover{background:var(--card)}.w.on{background:var(--yel);color:#222}.w.bad{border-color:var(--bad);background:var(--badb);color:var(--tx)}
+.msg{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 14px}
+.msg span{width:34px;height:38px;border:2px solid var(--line);border-radius:8px;display:grid;place-items:center;font-weight:800;font-size:20px;background:var(--card)}
+.msg .bk{background:var(--tx);border-color:var(--tx)}.msg .on{background:var(--okb);border-color:var(--ok);color:var(--ok)}
+.srow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.srow .q{flex:1 1 240px;margin:0}
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.v{background:var(--soft);border-radius:14px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:6px}
+.v b{font-size:18px;color:var(--pri)}.v i{display:block;color:var(--mut);font-size:14px}
+.v button{border:0;background:var(--card);border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer}
+.emo button{font-size:30px;background:none;border:3px solid transparent;border-radius:14px;cursor:pointer}.emo .on{border-color:var(--pri);background:var(--soft)}
+label{display:block;margin:6px 0}
+.wb{display:flex;flex-wrap:wrap;gap:6px;border:2px solid var(--pri);border-radius:14px;padding:10px;margin-bottom:10px;background:var(--soft)}.wb span{font-weight:700;color:var(--pri);padding:2px 10px}
+</style></head><body>
+<header class="hero"><h1>🚀 Past Simple Homework</h1><p>Regular verbs · +, − and ? · Beginner A1–A2</p></header>
+<div class="top"><nav><a href="#warm">Warm-up</a><a href="#words">Words</a><a href="#a">A (+)</a><a href="#b">B (−)</a><a href="#c">C (?)</a><a href="#refl">Reflection</a></nav>
+<div class="pg"><span>Progress</span><div><i id="bar"></i></div><b id="sc">0 / 0</b></div></div>
+<main>
+<section class="card" id="warm"><h2>🔥 Warm-up: How to build Past Simple</h2>
+<div class="sch">
+<div class="sc" style="background:#12a36b"><b>➕ Positive</b><code>Subject + verb-ed</code>She <u>played</u> football.</div>
+<div class="sc" style="background:#e5484d"><b>➖ Negative</b><code>Subject + didn’t + verb</code>She <u>didn’t play</u> football.</div>
+<div class="sc" style="background:#5b4bff"><b>❓ Question</b><code>Did + subject + verb?</code><u>Did</u> she <u>play</u> football?<br>Yes, she did. / No, she didn’t.</div></div>
+<div class="rules"><b>Spelling:</b> like → like<b>d</b> · play → play<b>ed</b> · cry → cr<b>ied</b> · stop → sto<b>pped</b><br><b>Remember:</b> after <i>didn’t</i> and <i>Did</i> the verb has NO -ed!</div>
+<h3>Quick check <span>(tap the answer)</span></h3><div id="wq"></div></section>
+<section class="card" id="words"><h2>📚 Regular verbs</h2><p class="ins">Tap 🔊 to listen. Repeat each word aloud.</p>
+<input id="vs" placeholder="🔍 Search a verb or a translation…"><div class="vg" id="vg"></div></section>
+<div id="app"></div>
+<section class="card" id="refl"><h2>💭 Reflection</h2><p class="ins">Tick what you can do now.</p>
+<div id="ck"></div><h3>How do you feel?</h3><div class="emo" id="emo"></div>
+<p><b>My 3 new verbs:</b></p><textarea id="t1" rows="2" placeholder="e.g. discovered, protected…"></textarea>
+<p><b>Still difficult for me:</b></p><textarea id="t2" rows="2" placeholder="Write here…"></textarea>
+<p><button class="btn" id="fin">See my result 🎉</button></p><div class="fb ok" id="res" style="font-size:18px"></div></section>
+</main>
+<script>
+const $=(s,e=document)=>e.querySelector(s),el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const N=s=>s.toLowerCase().replace(/[^a-z0-9 ]/g,"").replace(/\s+/g," ").trim();
+const shuf=(a,s=0)=>a.map((x,i)=>[x,Math.sin((i+s+1)*127.1)]).sort((p,q)=>p[1]-q[1]).map(p=>p[0]);
+let done=0,total=0;
+const award=()=>{done++;upd()},upd=()=>{$("#bar").style.width=Math.round(done/Math.max(total,1)*100)+"%";$("#sc").textContent=done+" / "+total};
+/* warm-up quiz */
+[["Yesterday I ___ TV.",["watched","watch"],0,"Positive past: verb + -ed."],["She didn’t ___ the piano.",["played","play"],1,"After didn’t use the base verb."],["___ you call me last night?",["Did","Do"],0,"Past questions start with Did."],["Did they ___ a mountain?",["climbed","climb"],1,"After Did use the base verb."]].forEach(([q,o,k,e],i)=>{total++;let ok=0;const d=el("div","mc"),f=el("span","fb");d.append(q+" ");o.forEach((t,j)=>{const b=el("button","btn",t);b.style.margin="2px";b.onclick=()=>{if(ok)return;if(j==k){ok=1;award();f.className="fb ok";f.textContent=" ✅ Yes!"}else{f.className="fb bad";f.textContent=" ❌ "+e}};d.append(b)});d.append(f);$("#wq").append(d)});
+/* vocabulary */
+const V="Answer|ˈɑːnsə|відповідати;Arrive|əˈraɪv|прибувати;Ask|ɑːsk|питати;Bother|ˈbɒðə|набридати, турбувати;Call|kɔːl|телефонувати, кликати;Celebrate|ˈselɪbreɪt|святкувати;Clean|kliːn|прибирати;Climb|klaɪm|лізти, підніматися;Close|kləʊz|закривати;Complete|kəmˈpliːt|завершувати;Cook|kʊk|готувати;Dance|dɑːns|танцювати;Decide|dɪˈsaɪd|вирішувати;Discover|dɪˈskʌvə|відкривати, знаходити;Enjoy|ɪnˈdʒɔɪ|насолоджуватися;Fish|fɪʃ|ловити рибу;Hate|heɪt|ненавидіти;Help|help|допомагати;Invite|ɪnˈvaɪt|запрошувати;Jump|dʒʌmp|стрибати;Learn|lɜːn|вчити, вивчати;Like|laɪk|подобатися;Listen|ˈlɪsn|слухати;Live|lɪv|жити;Look|lʊk|дивитися;Love|lʌv|любити;Match|mætʃ|матч;Move|muːv|переїжджати;Need|niːd|потребувати;Open|ˈəʊpən|відкривати;Paint|peɪnt|малювати;Park|pɑːk|паркувати;Plan|plæn|планувати;Play|pleɪ|грати;Protect|prəˈtekt|захищати;Push|pʊʃ|штовхати;Rain|reɪn|іти (про дощ);Snow|snəʊ|іти (про сніг);Start|stɑːt|починати;Study|ˈstʌdi|вчитися, вивчати;Talk|tɔːk|розмовляти;Walk|wɔːk|ходити пішки;Watch|wɒtʃ|дивитися;Work|wɜːk|працювати".split(";").map(x=>x.split("|"));
+function vr(q=""){const g=$("#vg");g.innerHTML="";V.filter(v=>(v[0]+v[2]).toLowerCase().includes(q.toLowerCase())).forEach(([w,p,u])=>{const d=el("div","v",`<div><b>${w}</b><i>/${p}/</i>${u}</div>`),b=el("button","","🔊");b.onclick=()=>{try{speechSynthesis.cancel();const s=new SpeechSynthesisUtterance(w);s.lang="en-GB";s.rate=.8;speechSynthesis.speak(s)}catch(e){}};d.append(b);g.append(d)})}
+vr();$("#vs").oninput=e=>vr(e.target.value);
+/* engines */
+const R={};
+R.sort=(b,a)=>{const cats=Object.keys(a.d),rl={"-D":"Verb ends in -e: add -d (like → liked).","-ED":"Most verbs: add -ed (play → played).","-IED":"Consonant + y: change y to -ied (cry → cried).","+ED":"Double consonant: stop → stopped. Verbs ending in -ss just add -ed (pass → passed)."},nm={"+ED":"Double consonant +ED"};let sel=null;
+const bank=el("div","bank"),fb=el("div","fb"),cols=el("div","cols"),ws=[];cats.forEach(c=>a.d[c].forEach(w=>ws.push([w,c])));
+shuf(ws).forEach(([w,c])=>{total++;const x=el("button","chip",w);x.onclick=()=>{if(x.disabled)return;sel&&sel.classList.remove("on");sel=x;x.classList.add("on")};x._c=c;bank.append(x)});
+cats.forEach(c=>{const d=el("div","col","<b>"+(nm[c]||c)+"</b>");d.onclick=()=>{if(!sel){fb.className="fb bad";fb.textContent="Tap a word first 👆";return}
+if(sel._c==c){const w=sel.textContent,x=el("button","chip",w);d.append(x);sel.remove();sel=null;award();fb.className="fb ok";fb.textContent="✅ "+w+" → "+rl[c]}else{fb.className="fb bad";fb.textContent="❌ Not here. Think about the spelling rule. "+Object.values(rl).join(" ")}};cols.append(d)});
+b.append(bank,fb,cols)};
+function txt(b,a,p){a.d.forEach(([q,ans],i)=>{total++;let tr=0,ok=0;const A0=ans.split("|")[0],r=el("div","it"),f=el("div","fb"),inp=el("input"),ln=el("div","q",`<b class="n">${i+1}.</b>`);inp.type="text";inp.autocomplete="off";inp.spellcheck=false;inp.placeholder=a.k=="fill"?"type…":"Type your answer here…";
+if(a.k=="fill"){const [x,y]=q.split("__");ln.append(x,inp,y||"");inp.className="sm"}else if(a.k!="ord")ln.append(el("span","pat",a.k=="sep"?A0.replace(/ /g,""):a.k=="vow"?q.replace(/_/g,"▢"):q));
+r.append(ln);if(a.k!="fill")r.append(inp);
+if(a.k=="ord"){const cw=el("div","bank");shuf(A0.replace(/[.?]/g,"").split(" "),i+3).forEach(w=>{const c=el("button","chip",w);c.onclick=()=>{if(!ok)inp.value=(inp.value+" "+w).trim()};cw.append(c)});const rs=el("button","chip","↺");rs.onclick=()=>{if(!ok)inp.value=""};cw.append(rs);r.append(cw)}
+const chk=()=>{if(ok)return;const v=inp.value,n=N(v);if(!n)return;
+if(ans.split("|").map(N).includes(n)){ok=1;award();f.className="fb ok";f.textContent="✅ Correct! "+(a.k=="fill"?"":A0);inp.disabled=true}
+else{tr++;let m="❌ Not quite. ";m+=/\bdid(nt| not)?\s+(\w+\s+)?(?!need\b)\w+ed\b/i.test(v.replace(/’/g,""))?"After did/didn’t use the base verb, without -ed. ":p.tip+" ";if(tr>1)m+="Answer: "+A0;f.className="fb bad";f.textContent=m}};
+inp.onkeydown=e=>{if(e.key=="Enter")chk()};const bt=el("button","btn","Check");bt.onclick=chk;r.append(bt,f);b.append(r)})}
+R.sep=R.ord=R.fill=R.vow=R.tr=txt;
+R.circle=(b,a,p)=>a.d.forEach((s,i)=>{total++;let ok=0,tr=0;const r=el("div","it"),f=el("div","fb"),w=el("div","q",`<b class="n">${i+1}.</b>`);
+const T=s.split(" ").map(t=>{const e=el("span","w",t.replace(/[\[\]]/g,""));e._m=/[\[\]]/.test(t);e.onclick=()=>{if(!ok)e.classList.toggle("on")};w.append(e," ");return e});
+const bt=el("button","btn","Check");bt.onclick=()=>{if(ok)return;if(T.every(e=>e.classList.contains("on")==e._m)){ok=1;award();f.className="fb ok";f.textContent="✅ Great, you found it!"}else{tr++;f.className="fb bad";f.textContent="❌ Look again. "+p.tip;if(tr>1)T.forEach(e=>e._m&&e.classList.add("bad"))}};r.append(w,bt,f);b.append(r)});
+R.secret=(b,a,p)=>{const bx=el("div","msg"),L=[];[...a.m].forEach(c=>{const e=el("span",c==" "?"bk":"");bx.append(e);if(c!=" ")L.push(e)});b.append(bx);
+a.d.forEach(([s,c,l],i)=>{total++;let ok=0;const r=el("div","it srow"),f=el("span","fb");
+const mk=(v,t)=>{const x=el("button","btn "+(v?"g":"r"),t);x.onclick=()=>{if(ok)return;if(v==c){ok=1;award();L[i].textContent=l;L[i].classList.add("on");f.className="fb ok";f.textContent="✅ Letter "+l}else{f.className="fb bad";f.textContent=c?"❌ This sentence is correct.":"❌ Find the mistake. "+p.tip}};return x};
+r.append(el("span","q",`<b class="n">${i+1}.</b>`+s),mk(1,"✔"),mk(0,"✘"),f);b.append(r)})};
+/* data */
+const BK={a:"finish start play hate pass repeat call cook tidy decide study watch listen celebrate talk",b:"work study rain help like park walk move invite play bother celebrate paint cook fish",c:"live climb hate call enjoy clean ask watch stop walk travel close arrive finish snow"};
+const tA="Positive: verb + -ed (-d, -ied).",tB="Negative: didn’t + base verb (no -ed).",tC="Question: Did + subject + base verb (no -ed).";
+const I={sort:"Tap a word, then tap its column.",sep:"Write the sentence with spaces.",ord:"Tap the words or type the sentence.",fill:"Choose a verb from the box. Type it in the correct form.",vow:"Add the vowels. Type the sentence.",tr:"Write the negative sentence.",circle:"Tap the mistakes, then press Check.",secret:"Is the sentence correct? Find the secret message."};
+const act=(n,t,k,d,m)=>({n,t,k,d,m,i:I[k]});
+const P=[{id:"a",t:"Part A · Positive sentences (+)",tip:tA,acts:[
+act("1","Write in the correct place","sort",{"-D":["like","decide","live","hate","love","phone","close","arrive"],"-ED":["finish","start","play","repeat","watch","listen","look","talk","climb","enjoy","clean","ask","walk","open"],"-IED":["cry","worry","tidy","study"],"+ED":["pass","miss","stop","travel"]}),
+act("1b","Write in the correct place","sort",{"-D":["arrive","love","celebrate","dance","invite"],"-ED":["enjoy","park","play","look","bother","protect","help","fish","climb","need","paint","rain","snow","jump"],"-IED":["tidy","study","cry"],"+ED":["pass","miss"]}),
+act("2","Write in order","ord",[["","We played a football match yesterday.|Yesterday we played a football match."],["","She needed a new piano."],["","Susan answered a very difficult question."],["","My uncle fished a big fish."],["","My mum parked the car in the park."],["","We talked a lot in class."],["","They moved to Paris three years ago.|Three years ago they moved to Paris."],["","He watched TV last night.|Last night he watched TV."],["","My friends discovered a cave."],["","They planned the weekend."]]),
+act("4","Separate","sep",["They jumped ten times.","My sister bothered me last night.","She called me yesterday.","It rained a lot last year.","They lived in Tokyo two years ago.","We parked the car in the garage.","They asked me a lot of questions.","We enjoyed the birthday party.","He walked to school.","We watched TV at home."].map(x=>["",x])),
+act("7","Complete the sentences","fill",[["She __ vegetables 2 years ago. She still hates vegetables.","hated"],["I __ my birthday party last week.","celebrated"],["Susan __ her mum because she didn’t feel well.","called"],["They __ the piano when they were eight.","played"],["My dad __ TV last night.","watched"],["You __ hard for the exam.","studied"],["My brother __ the exam because he studied a lot.","passed"],["I __ the race very tired.","finished"],["My grandma __ the dinner. It was delicious.","cooked"],["Peter __ his bedroom.","tidied"],["My parrot __ all the words.","repeated"],["The students __ in class and the teacher got angry.","talked"],["We __ classes at nine last course.","started"],["John __ to pop music all night.","listened"],["My family __ to go to the mountains at the weekend.","decided"]]),
+act("8","Find the vowels","vow",[["_ PL_Y_D _ B_SK_TB_LL M_TCH.","I played a basketball match."],["W_ W_LK_D _N TH_ P_RK.","We walked in the park.|We walked on the park."],["_T R__N_D _ L_T L_ST W__K.","It rained a lot last week."],["SH_ B_TH_R_D M_ _N CL_SS.","She bothered me in class."],["TH_Y PL_Y_D TH_ P__N_.","They played the piano."],["H_ L_K_D B_N_N_S.","He liked bananas."],["K_R_N ST_D__D H_RD.","Karen studied hard."],["W_ W_TCH_D TV L_ST N_GHT.","We watched TV last night."],["H_ F_SH_D _ B_G F_SH.","He fished a big fish."],["TH_Y W_RK_D T_N H__RS _V_RY D_Y.","They worked ten hours every day."]]),
+act("9","Read and find the secret message","secret",[["I answered all the questions.",1,"I"],["My dad cook the lunch last night.",0,"W"],["We moving to London last week.",0,"A"],["She climbed a mountain.",1,"T"],["You called your mum last night.",1,"C"],["We danced in the birthday party.",1,"H"],["They plays the violin last year.",0,"E"],["Susan learning a lot at school.",0,"D"],["It rained a lot last summer.",1,"T"],["We parks in the car park yesterday.",0,"V"],["I hated vegetables when I was five.",1,"Y"],["We started classes at eight.",1,"E"],["They studies hard for the exam yesterday.",0,"S"],["My uncle fish a fish last week.",0,"T"],["My brother bothered me yesterday.",1,"E"],["I enjoyed the baseball match.",1,"R"],["She look at me when I was walking.",0,"D"],["They cleaned their house.",1,"A"],["I helps my parents.",0,"Y"]],"I WATCHED TV YESTERDAY")]},
+{id:"b",t:"Part B · Negative sentences (−)",tip:tB,acts:[
+act("1","Separate","sep",["You didn’t go to school yesterday.","I didn’t celebrate my birthday last week.","They didn’t move to Japan three years ago.","We didn’t like vegetables when we were seven.","Maria didn’t call me yesterday.","My dad didn’t park in front of the school.","It didn’t rain a lot last winter.","We didn’t talk in class.","She didn’t ask me a lot of questions.","They didn’t start classes at eight."].map(x=>["",x])),
+act("2","Write in order","ord",[["","They didn’t listen to music last night."],["","I didn’t go to school yesterday."],["","She didn’t finish her homework last night."],["","They didn’t call me last week."],["","The teacher didn’t open the window in the morning."],["","It didn’t rain a lot two years ago."],["","I didn’t cook the lunch at the weekend."],["","She didn’t study hard for the exam."],["","We didn’t start classes at nine."],["","He didn’t walk in the park."]]),
+act("5","Write in the negative form","tr",[["I cooked the lunch yesterday.","I didn’t cook the lunch yesterday."],["We helped the teacher.","We didn’t help the teacher."],["She cleaned the house alone.","She didn’t clean the house alone."],["They enjoy the birthday party.","They didn’t enjoy the birthday party."],["He played the flute.","He didn’t play the flute."],["My sister bothered me.","My sister didn’t bother me."],["It snowed a lot last night.","It didn’t snow a lot last night."],["We talked a lot at home.","We didn’t talk a lot at home."],["My mum worked very hard.","My mum didn’t work very hard."],["I learned a lot at school.","I didn’t learn a lot at school."]]),
+act("7","Complete the sentences","fill",[["I __ and I failed the exam.","didn’t study"],["My uncle __ the lunch. My aunt did it.","didn’t cook"],["You __ vegetables when I was a child.","didn’t like"],["They __ to London. They still live in Glasgow.","didn’t move"],["I __ all my friends to the birthday party.","didn’t invite"],["It __ a lot last week. It was sunny.","didn’t rain"],["She __ a beautiful painting.","didn’t paint"],["My sister __ me yesterday.","didn’t bother"],["My mum __ the car in the car park.","didn’t park"],["He __ his parents in doing the housework.","didn’t help"],["My dad __ in a big company.","didn’t work"],["My friends __ the piano two years ago.","didn’t play"],["They __ in the park. They walked in the street.","didn’t walk"],["You __ a big fish. It was small.","didn’t fish"],["Susan __ her birthday party at home.","didn’t celebrate"]]),
+act("8","Find the vowels","vow",[["_ D_DN’T W_TCH_ TH_ T_L_V_S__N.","I didn’t watch the television."],["H_ D_DN’T L_ST_N T_ M_S_C.","He didn’t listen to music.|He didn’t listen to the music."],["S_S_N D_DN’T C_LL M_ L_ST N_GHT.","Susan didn’t call me last night."],["Y__ D_DN’T CL_MB _ M__NT__N.","You didn’t climb a mountain."],["W_ D_DN’T L_V_ _N C_N_D_.","We didn’t live in Canada."],["TH_Y D_DN’T PL_Y TH_ G__T_R.","They didn’t play the guitar."],["H_ D_DN’T T_LK _N CL_SS.","He didn’t talk in class."],["P_T_R D_DN’T ST_DY H_RD.","Peter didn’t study hard."],["_T D_DN’T R__N _ L_T.","It didn’t rain a lot."],["SH_ D_DN’T C__K TH_ L_NCH.","She didn’t cook the lunch."]]),
+act("9","Read and find the secret message","secret",[["I didn’t play football yesterday.",1,"I"],["She didn’t study hard for the exam.",1,"D"],["They didn’t enjoyed the party last night.",0,"I"],["Sam didn’t opening the window.",0,"D"],["They didn’t hate chocolate two years ago.",1,"N"],["We dident jump ten times in class.",0,"T"],["Sarah didn’t watch TV at the weekend.",1,"P"],["Paul didn’t complete the activity.",1,"H"],["It didn’t snowed a lot last winter.",0,"O"],["The students didn’t start classes at nine.",1,"N"],["My mum fished didn’t a fish.",0,"E"],["Ann didn’t parked her car in the car park.",0,"Y"],["Samantha didn’t bother her cousin.",1,"O"],["I didn’t answered the question.",0,"U"]],"I DIDNT PHONE YOU")]},
+{id:"c",t:"Part C · Questions (?)",tip:tC,acts:[
+act("1","Separate","sep",["Did you walk to school in the morning?","Did you live in France last year?","Did you play volleyball when you were a child?","Did you climb a mountain?","Did she paint a beautiful painting?","Did he enjoy the birthday party last night?","Did it rain a lot last week?","Did you talk in class yesterday?","Did John listen to music last night?","Did you study hard for the exam?"].map(x=>["",x])),
+act("2","Write in order","ord",[["","Did they play video games last night?"],["","Did your parents help you at home?"],["","Did she celebrate the birthday party?"],["","Did they park the car in the park?"],["","Did my mum open the window?"],["","Did you hate vegetables when you were a child?"],["","Did she invite her friends?"],["","Did it rain last summer?"],["","Did we walk in the park last Sunday?"],["","Did Susan play computer games yesterday?"]]),
+act("7","Write questions","fill",[["Did you __ your parent with your mobile phone?","call"],["Did you __ to New York last summer?","travel"],["Did she __ the birthday party?","enjoy"],["Did they __ at the airport on time?","arrive"],["Did the students __ a lot of questions?","ask"],["Did they __ a mountain last week?","climb"],["Did he __ his bedroom? It was dirty.","clean"],["Did your dad __ the window? It was cold.","close"],["Did you __ in a city or in a village?","live"],["Did Sarah __ in the park last Sunday?","walk"],["Did it __ last night? It was cold.","snow"],["Did your mum __ TV last night?","watch"],["Did you __ vegetables when you were a child?","hate"],["Did the students __ all their work?","finish"],["Did you __ bothering your friends?","stop"]]),
+act("8","Find the vowels","vow",[["D_D Y__ W_TCH TV L_ST N_GHT?","Did you watch TV last night?"],["D_D Y__ P_RK Y__R C_R?","Did you park your car?"],["D_D Y__ F_SH _ F_SH?","Did you fish a fish?"],["D_D Y__ W_TCH _ M_V__?","Did you watch a movie?"],["D_D SH_ ST_DY H_RD?","Did she study hard?"],["D_D TH_Y CL__N TH__R B_DR__M?","Did they clean their bedroom?"],["D_D Y__ C_LL Y__R P_R_NTS?","Did you call your parents?"],["D_D H_ PL_Y TH_ G__T_R?","Did he play the guitar?"],["D_D SH_ L_V_ _N P_R_S?","Did she live in Paris?"],["D_D Y__ _NSW_R TH_ Q__ST__N?","Did you answer the question?"]]),
+act("9","Read and find the secret message","secret",[["Did she climb a mountain?",1,"D"],["Did he moving to London two years ago?",0,"I"],["Did she celebrate a big party?",1,"D"],["Did they called their parents?",0,"Y"],["Did we walk in the forest yesterday?",1,"O"],["You did live in the city last year?",0,"U"],["Did Natasha close the window?",1,"L"],["Did he enjoyed the trip last week?",0,"I"],["You did studied hard for the exam?",0,"K"],["Did he helped his parents?",0,"E"],["Did you bother your sister in the morning?",1,"T"],["Did she cooked the lunch at home?",0,"H"],["Did Sarah start classes at nine?",1,"E"],["Did they worked in a big company?",0,"M"],["Did you like vegetables when you were 5?",1,"O"],["Did he watched a good movie last night?",0,"V"],["Did you dance at the party?",1,"I"],["Did they missed the bus to school?",0,"E"]],"DID YOU LIKE THE MOVIE")]}];
+P.forEach(p=>{const s=el("section","card");s.id=p.id;s.append(el("h2","",p.t));p.acts.forEach(a=>{const b=el("div","act");b.append(el("h3","","Activity "+a.n+". <span>"+a.t+"</span>"),el("p","ins",a.i));if(a.k=="fill")b.append(el("div","wb",BK[p.id].split(" ").map(w=>"<span>"+w+"</span>").join("")));R[a.k](b,a,p);s.append(b)});$("#app").append(s)});
+/* reflection */
+["I can write positive sentences (+).","I can write negative sentences with didn’t (−).","I can ask questions with Did (?).","I know the -ed spelling rules."].forEach(t=>$("#ck").append(el("label","",`<input type="checkbox" style="width:auto"> ${t}`)));
+["😟","😐","🙂","🤩"].forEach(e=>{const b=el("button","",e);b.onclick=()=>{document.querySelectorAll("#emo button").forEach(x=>x.classList.remove("on"));b.classList.add("on")};$("#emo").append(b)});
+$("#fin").onclick=()=>{const p=Math.round(done/total*100);$("#res").textContent=(p>=90?"🏆 Excellent! ":p>=60?"👏 Good job! ":"💪 Keep practising! ")+"You completed "+done+" of "+total+" tasks ("+p+"%)."};
+upd();
+</script></body></html>
